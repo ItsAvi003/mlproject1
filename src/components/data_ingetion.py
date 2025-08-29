@@ -8,6 +8,9 @@ from src.exception import CustomException
 from src.logger import logging
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
+
 
 
 @dataclass
@@ -51,7 +54,11 @@ if __name__=="__main__":
      
     data_tranformation=DataTransformation()
     # we are just doing the preprocessiong part on train and test
-    data_tranformation.initiate_data_transformation(train_dt,test_dt)
+    train_arr,test_arr,_=data_tranformation.initiate_data_transformation(train_dt,test_dt)
+
+    #calling model train
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
 
 
 
