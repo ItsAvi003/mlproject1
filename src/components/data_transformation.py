@@ -72,8 +72,8 @@ class DataTransformation:
             preprpcessor_obj=self.get_data_transformation_obj()
 
             target_column_name="math_score"
-            num_features=['math_score', 'reading_score', 'writing_score']
-            cat_features=['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
+            num_features=['reading_score', 'writing_score']
+            
 
             input_feature_train_df=train_df.drop(columns=["math_score"],axis=1)
             target_feature_train_df=train_df[target_column_name]
